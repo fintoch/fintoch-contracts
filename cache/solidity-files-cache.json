@@ -1,0 +1,5652 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/share/project/aave-v3-core/contracts/dependencies/chainlink/AggregatorInterface.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "8716b85a61d64731fae341dd17c1afca",
+      "sourceName": "contracts/dependencies/chainlink/AggregatorInterface.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AggregatorInterface"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/misc/FintochOracle.sol": {
+      "lastModificationDate": 1653467167819,
+      "contentHash": "e6241d2613a8c1d850a1913d03e9e8ed",
+      "sourceName": "contracts/misc/FintochOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../dependencies/chainlink/AggregatorInterface.sol",
+        "../protocol/libraries/helpers/Errors.sol",
+        "../interfaces/IACLManager.sol",
+        "../interfaces/IPoolAddressesProvider.sol",
+        "../interfaces/IPriceOracleGetter.sol",
+        "../interfaces/IFintochOracle.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "FintochOracle"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/helpers/Errors.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "803a15bc20de0df037723797c36b858e",
+      "sourceName": "contracts/protocol/libraries/helpers/Errors.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Errors"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IACLManager.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "122e29753dbde51dfc7c19a64de4b121",
+      "sourceName": "contracts/interfaces/IACLManager.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IPoolAddressesProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IACLManager"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPoolAddressesProvider.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "4c2f56b4f39da05cc9ff6d7da6ee26c6",
+      "sourceName": "contracts/interfaces/IPoolAddressesProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPoolAddressesProvider"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPriceOracleGetter.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "0ff59c9cac228d9eac5c3095a6c22678",
+      "sourceName": "contracts/interfaces/IPriceOracleGetter.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPriceOracleGetter"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IFintochOracle.sol": {
+      "lastModificationDate": 1653467183264,
+      "contentHash": "c253faaeb581d703dac3dada66535094",
+      "sourceName": "contracts/interfaces/IFintochOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IPriceOracleGetter.sol",
+        "./IPoolAddressesProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IFintochOracle"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/pool/DefaultReserveInterestRateStrategy.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "0f5030d5e73835a23291178d4401b86f",
+      "sourceName": "contracts/protocol/pool/DefaultReserveInterestRateStrategy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../libraries/math/WadRayMath.sol",
+        "../libraries/math/PercentageMath.sol",
+        "../libraries/types/DataTypes.sol",
+        "../../interfaces/IReserveInterestRateStrategy.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../libraries/helpers/Errors.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "DefaultReserveInterestRateStrategy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/IERC20.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "58be66fdcf67c9480d4c210197da0204",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/math/WadRayMath.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "811fbb5d84c79a3495b825b65bab20a7",
+      "sourceName": "contracts/protocol/libraries/math/WadRayMath.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "WadRayMath"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/math/PercentageMath.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "60f7411f5fa77cb57589e953255ea810",
+      "sourceName": "contracts/protocol/libraries/math/PercentageMath.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PercentageMath"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/types/DataTypes.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "c1464f9a5f3b4fb1eaf2bc3fb87722cf",
+      "sourceName": "contracts/protocol/libraries/types/DataTypes.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "DataTypes"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IReserveInterestRateStrategy.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "e55b9f51f71104894690485f12193a80",
+      "sourceName": "contracts/interfaces/IReserveInterestRateStrategy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../protocol/libraries/types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IReserveInterestRateStrategy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/configuration/PriceOracleSentinel.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "41a7a8f93ffb1a8e2b221c1d069e1c94",
+      "sourceName": "contracts/protocol/configuration/PriceOracleSentinel.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/helpers/Errors.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IPriceOracleSentinel.sol",
+        "../../interfaces/ISequencerOracle.sol",
+        "../../interfaces/IACLManager.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PriceOracleSentinel"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPriceOracleSentinel.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "709cb7c837a6f1638339cb1205ec9e2a",
+      "sourceName": "contracts/interfaces/IPriceOracleSentinel.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IPoolAddressesProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPriceOracleSentinel"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/ISequencerOracle.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "9de056b592a423764b5a8734b2210beb",
+      "sourceName": "contracts/interfaces/ISequencerOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ISequencerOracle"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/configuration/ACLManager.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "f9b6dc876bb955e344a94832816a5c83",
+      "sourceName": "contracts/protocol/configuration/ACLManager.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/AccessControl.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IACLManager.sol",
+        "../libraries/helpers/Errors.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ACLManager"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/AccessControl.sol": {
+      "lastModificationDate": 1653462093209,
+      "contentHash": "349e7658a1c3feabee741e3e274303e5",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IAccessControl.sol",
+        "./Context.sol",
+        "./Strings.sol",
+        "./ERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/IAccessControl.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "44c7600ce8848dc3114ac53bdd570ed1",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/IAccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IAccessControl"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/Context.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "4996fbb0b3c193a67d7793f6a5cc63d6",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/Context.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/Strings.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "acd6e066a79adbe2710f9f4a0f74154d",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/ERC165.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "cc7509282123b7e520dd451f5ac7cd19",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/IERC165.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "3360cd150a500ee6e495be52a82d7134",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/base/DebtTokenBase.sol": {
+      "lastModificationDate": 1653462792679,
+      "contentHash": "cc09471aad57c99580547a6f9c685a77",
+      "sourceName": "contracts/protocol/tokenization/base/DebtTokenBase.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/Context.sol",
+        "../../libraries/helpers/Errors.sol",
+        "../../libraries/fintoch-upgradeability/VersionedInitializable.sol",
+        "../../../interfaces/ICreditDelegationToken.sol",
+        "./EIP712Base.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "DebtTokenBase"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/fintoch-upgradeability/VersionedInitializable.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "4787380392e7b5023924a786b4537289",
+      "sourceName": "contracts/protocol/libraries/fintoch-upgradeability/VersionedInitializable.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "VersionedInitializable"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/ICreditDelegationToken.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "f9ca31944e2ba8b4554439aa8d93f25f",
+      "sourceName": "contracts/interfaces/ICreditDelegationToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ICreditDelegationToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/base/EIP712Base.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "40c31a843846d4023b89dc19f010ba07",
+      "sourceName": "contracts/protocol/tokenization/base/EIP712Base.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "EIP712Base"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/VariableDebtToken.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "7d0de0b8b2a62a8edc84ccf9dfcdbbd4",
+      "sourceName": "contracts/protocol/tokenization/VariableDebtToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../libraries/fintoch-upgradeability/VersionedInitializable.sol",
+        "../libraries/math/WadRayMath.sol",
+        "../libraries/helpers/Errors.sol",
+        "../../interfaces/IPool.sol",
+        "../../interfaces/IFintochIncentivesController.sol",
+        "../../interfaces/IInitializableDebtToken.sol",
+        "../../interfaces/IVariableDebtToken.sol",
+        "./base/EIP712Base.sol",
+        "./base/DebtTokenBase.sol",
+        "./base/ScaledBalanceTokenBase.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "VariableDebtToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/SafeCast.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "d1bf9760be4b001ec745227979e639df",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPool.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "a35e9a17a34922d01a0e285fae39aa2e",
+      "sourceName": "contracts/interfaces/IPool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IPoolAddressesProvider.sol",
+        "../protocol/libraries/types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPool"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IFintochIncentivesController.sol": {
+      "lastModificationDate": 1653467192744,
+      "contentHash": "5aa51e0eab17652a5715697a608570af",
+      "sourceName": "contracts/interfaces/IFintochIncentivesController.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IFintochIncentivesController"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IInitializableDebtToken.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "1a13308ec16e29b7dfa162fd7309ad87",
+      "sourceName": "contracts/interfaces/IInitializableDebtToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IFintochIncentivesController.sol",
+        "./IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IInitializableDebtToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IVariableDebtToken.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "f7d804dbccf6c935cd2fa2e299e9005a",
+      "sourceName": "contracts/interfaces/IVariableDebtToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IScaledBalanceToken.sol",
+        "./IInitializableDebtToken.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IVariableDebtToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "91e9b37c0afe0054594265a282e30891",
+      "sourceName": "contracts/protocol/tokenization/base/ScaledBalanceTokenBase.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../../libraries/helpers/Errors.sol",
+        "../../libraries/math/WadRayMath.sol",
+        "../../../interfaces/IPool.sol",
+        "../../../interfaces/IScaledBalanceToken.sol",
+        "./MintableIncentivizedERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ScaledBalanceTokenBase"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IScaledBalanceToken.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "f69b48d72556b5bfc369b9f342c85ff8",
+      "sourceName": "contracts/interfaces/IScaledBalanceToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IScaledBalanceToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/base/MintableIncentivizedERC20.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "9a2fb00df67e4cef0c925fbd2d364a79",
+      "sourceName": "contracts/protocol/tokenization/base/MintableIncentivizedERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../interfaces/IFintochIncentivesController.sol",
+        "../../../interfaces/IPool.sol",
+        "./IncentivizedERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MintableIncentivizedERC20"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/base/IncentivizedERC20.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "3906f9635cfbfc0b4f2f9d64c2472c9b",
+      "sourceName": "contracts/protocol/tokenization/base/IncentivizedERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/Context.sol",
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../dependencies/openzeppelin/contracts/IERC20Detailed.sol",
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../../libraries/math/WadRayMath.sol",
+        "../../libraries/helpers/Errors.sol",
+        "../../../interfaces/IFintochIncentivesController.sol",
+        "../../../interfaces/IPoolAddressesProvider.sol",
+        "../../../interfaces/IPool.sol",
+        "../../../interfaces/IACLManager.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IncentivizedERC20"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/IERC20Detailed.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "6b6ae9a0820581f0e8b80ac0a553ae3a",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/IERC20Detailed.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IERC20Detailed"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/StableDebtToken.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "9834b35ffa2b0c5e2bd4268a8b4944c1",
+      "sourceName": "contracts/protocol/tokenization/StableDebtToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../libraries/fintoch-upgradeability/VersionedInitializable.sol",
+        "../libraries/math/MathUtils.sol",
+        "../libraries/math/WadRayMath.sol",
+        "../libraries/helpers/Errors.sol",
+        "../../interfaces/IFintochIncentivesController.sol",
+        "../../interfaces/IInitializableDebtToken.sol",
+        "../../interfaces/IStableDebtToken.sol",
+        "../../interfaces/IPool.sol",
+        "./base/EIP712Base.sol",
+        "./base/DebtTokenBase.sol",
+        "./base/IncentivizedERC20.sol",
+        "../../dependencies/openzeppelin/contracts/SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "StableDebtToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/math/MathUtils.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "e8c1cc88a3d8d7dc1f115ec0508438aa",
+      "sourceName": "contracts/protocol/libraries/math/MathUtils.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./WadRayMath.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MathUtils"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IStableDebtToken.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "22d57d18f34709b2482ac44b50bd91f0",
+      "sourceName": "contracts/interfaces/IStableDebtToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IInitializableDebtToken.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IStableDebtToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/AToken.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "4dccfdb97f6f96435b69379e782b159d",
+      "sourceName": "contracts/protocol/tokenization/AToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../libraries/fintoch-upgradeability/VersionedInitializable.sol",
+        "../libraries/helpers/Errors.sol",
+        "../libraries/math/WadRayMath.sol",
+        "../../interfaces/IPool.sol",
+        "../../interfaces/IAToken.sol",
+        "../../interfaces/IFintochIncentivesController.sol",
+        "../../interfaces/IInitializableAToken.sol",
+        "./base/ScaledBalanceTokenBase.sol",
+        "./base/IncentivizedERC20.sol",
+        "./base/EIP712Base.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "AToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/gnosis/contracts/GPv2SafeERC20.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "ae980b89013943e5b917d4d3c7173851",
+      "sourceName": "contracts/dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../openzeppelin/contracts/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "GPv2SafeERC20"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IAToken.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "9458c856f6e173a941c4c55780781f66",
+      "sourceName": "contracts/interfaces/IAToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../dependencies/openzeppelin/contracts/IERC20.sol",
+        "./IScaledBalanceToken.sol",
+        "./IInitializableAToken.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IAToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IInitializableAToken.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "5f86a7b62f286825da995250c4fbb8e4",
+      "sourceName": "contracts/interfaces/IInitializableAToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IFintochIncentivesController.sol",
+        "./IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IInitializableAToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/tokenization/DelegationAwareAToken.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "93a835c85c42f9221f8673db89c6f32d",
+      "sourceName": "contracts/protocol/tokenization/DelegationAwareAToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IPool.sol",
+        "../../interfaces/IDelegationToken.sol",
+        "./AToken.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "DelegationAwareAToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IDelegationToken.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "1c971cc2c2fac6b8018163d4c784618b",
+      "sourceName": "contracts/interfaces/IDelegationToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IDelegationToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/tokens/MintableDelegationERC20.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "c9407df33079813ba457247266d19782",
+      "sourceName": "contracts/mocks/tokens/MintableDelegationERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/ERC20.sol",
+        "../../interfaces/IDelegationToken.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MintableDelegationERC20"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/ERC20.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "ab66ccb056f044335138910b15985021",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Context.sol",
+        "./IERC20.sol",
+        "./SafeMath.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/SafeMath.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "608f6fe4aa9bae51baa1f728805c51c7",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/Address.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "2e3a67c32c45c5a1ccea324c8105b393",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/Address.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/tokens/MintableERC20.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "1350b75859f997d7142c507071458b58",
+      "sourceName": "contracts/mocks/tokens/MintableERC20.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/ERC20.sol",
+        "../../interfaces/IERC20WithPermit.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MintableERC20"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IERC20WithPermit.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "fa89d190ddbe823e28dbfe50a685e96e",
+      "sourceName": "contracts/interfaces/IERC20WithPermit.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../dependencies/openzeppelin/contracts/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IERC20WithPermit"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/tests/FlashloanAttacker.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "8eaaf06a1a6e85a4e6dc5eb91da1224d",
+      "sourceName": "contracts/mocks/tests/FlashloanAttacker.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/SafeMath.sol",
+        "../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../dependencies/openzeppelin/contracts/SafeMath.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../flashloan/base/FlashLoanSimpleReceiverBase.sol",
+        "../tokens/MintableERC20.sol",
+        "../../interfaces/IPool.sol",
+        "../../protocol/libraries/types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "FlashloanAttacker"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/flashloan/base/FlashLoanSimpleReceiverBase.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "93ceec209dabbe093624e5022504fb8d",
+      "sourceName": "contracts/flashloan/base/FlashLoanSimpleReceiverBase.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFlashLoanSimpleReceiver.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "FlashLoanSimpleReceiverBase"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/flashloan/interfaces/IFlashLoanSimpleReceiver.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "f272c02c2579e5e8a50dbd51d406e34f",
+      "sourceName": "contracts/flashloan/interfaces/IFlashLoanSimpleReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IFlashLoanSimpleReceiver"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/tests/MockReserveInterestRateStrategy.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "df543864f802af37affdef62de6bc529",
+      "sourceName": "contracts/mocks/tests/MockReserveInterestRateStrategy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IReserveInterestRateStrategy.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../protocol/libraries/math/WadRayMath.sol",
+        "../../protocol/libraries/types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockReserveInterestRateStrategy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/tests/WadRayMathWrapper.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "4e2a2b3a8daa7f3cfe2cbe08acedde05",
+      "sourceName": "contracts/mocks/tests/WadRayMathWrapper.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../protocol/libraries/math/WadRayMath.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "WadRayMathWrapper"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/BridgeLogic.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "72d75dff177c742838f9d51712edc5ed",
+      "sourceName": "contracts/protocol/libraries/logic/BridgeLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../../../interfaces/IAToken.sol",
+        "../types/DataTypes.sol",
+        "../configuration/UserConfiguration.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../math/WadRayMath.sol",
+        "../math/PercentageMath.sol",
+        "../helpers/Errors.sol",
+        "./ValidationLogic.sol",
+        "./ReserveLogic.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "BridgeLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/configuration/UserConfiguration.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "0d08640bbbc859bf957bf889db749f23",
+      "sourceName": "contracts/protocol/libraries/configuration/UserConfiguration.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../helpers/Errors.sol",
+        "../types/DataTypes.sol",
+        "./ReserveConfiguration.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "UserConfiguration"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/configuration/ReserveConfiguration.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "ef324aab71fec1e02de7bb337bc1fe0b",
+      "sourceName": "contracts/protocol/libraries/configuration/ReserveConfiguration.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../helpers/Errors.sol",
+        "../types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ReserveConfiguration"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/ValidationLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "54013d0e43142a53c71709f85f611fde",
+      "sourceName": "contracts/protocol/libraries/logic/ValidationLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../dependencies/openzeppelin/contracts/Address.sol",
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../interfaces/IReserveInterestRateStrategy.sol",
+        "../../../interfaces/IStableDebtToken.sol",
+        "../../../interfaces/IScaledBalanceToken.sol",
+        "../../../interfaces/IPriceOracleGetter.sol",
+        "../../../interfaces/IAToken.sol",
+        "../../../interfaces/IPriceOracleSentinel.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../configuration/UserConfiguration.sol",
+        "../helpers/Errors.sol",
+        "../math/WadRayMath.sol",
+        "../math/PercentageMath.sol",
+        "../types/DataTypes.sol",
+        "./ReserveLogic.sol",
+        "./GenericLogic.sol",
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ValidationLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/ReserveLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "4f18f474bca2b33dbd53c9108c23327c",
+      "sourceName": "contracts/protocol/libraries/logic/ReserveLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../interfaces/IStableDebtToken.sol",
+        "../../../interfaces/IVariableDebtToken.sol",
+        "../../../interfaces/IReserveInterestRateStrategy.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../math/MathUtils.sol",
+        "../math/WadRayMath.sol",
+        "../math/PercentageMath.sol",
+        "../helpers/Errors.sol",
+        "../types/DataTypes.sol",
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ReserveLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/GenericLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "856e8cd9a9479f76bcdb2e54dc16f3dd",
+      "sourceName": "contracts/protocol/libraries/logic/GenericLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../interfaces/IScaledBalanceToken.sol",
+        "../../../interfaces/IPriceOracleGetter.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../configuration/UserConfiguration.sol",
+        "../math/PercentageMath.sol",
+        "../math/WadRayMath.sol",
+        "../types/DataTypes.sol",
+        "./ReserveLogic.sol",
+        "./EModeLogic.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "GenericLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/EModeLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "a5049e522d8665c9abe9296b8d52c2ac",
+      "sourceName": "contracts/protocol/libraries/logic/EModeLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../interfaces/IPriceOracleGetter.sol",
+        "../configuration/UserConfiguration.sol",
+        "../helpers/Errors.sol",
+        "../math/WadRayMath.sol",
+        "../math/PercentageMath.sol",
+        "../types/DataTypes.sol",
+        "./ValidationLogic.sol",
+        "./ReserveLogic.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "EModeLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/pool/PoolStorage.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "1060c08c66376908752be0c290fcd681",
+      "sourceName": "contracts/protocol/pool/PoolStorage.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/configuration/UserConfiguration.sol",
+        "../libraries/configuration/ReserveConfiguration.sol",
+        "../libraries/logic/ReserveLogic.sol",
+        "../libraries/types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PoolStorage"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/helpers/MockReserveConfiguration.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "9b53261b05b759b4eff389d4fc419be7",
+      "sourceName": "contracts/mocks/helpers/MockReserveConfiguration.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../protocol/libraries/configuration/ReserveConfiguration.sol",
+        "../../protocol/libraries/types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockReserveConfiguration"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/LiquidationLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "259da23544bce2822eecbf2fc15de9af",
+      "sourceName": "contracts/protocol/libraries/logic/LiquidationLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts//IERC20.sol",
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../libraries/math/PercentageMath.sol",
+        "../../libraries/math/WadRayMath.sol",
+        "../../libraries/helpers/Helpers.sol",
+        "../../libraries/types/DataTypes.sol",
+        "./ReserveLogic.sol",
+        "./ValidationLogic.sol",
+        "./GenericLogic.sol",
+        "./IsolationModeLogic.sol",
+        "./EModeLogic.sol",
+        "../../libraries/configuration/UserConfiguration.sol",
+        "../../libraries/configuration/ReserveConfiguration.sol",
+        "../../../interfaces/IAToken.sol",
+        "../../../interfaces/IStableDebtToken.sol",
+        "../../../interfaces/IVariableDebtToken.sol",
+        "../../../interfaces/IPriceOracleGetter.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "LiquidationLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/helpers/Helpers.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "eef4dadf660f05a0d156cb5d235949c2",
+      "sourceName": "contracts/protocol/libraries/helpers/Helpers.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Helpers"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/IsolationModeLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "f7fd5a491ca4b24db8e1e91baf18cb1e",
+      "sourceName": "contracts/protocol/libraries/logic/IsolationModeLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../types/DataTypes.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../configuration/UserConfiguration.sol",
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IsolationModeLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/BorrowLogic.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "d6f82b2b344e530c7d9dc8a32525890b",
+      "sourceName": "contracts/protocol/libraries/logic/BorrowLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../interfaces/IStableDebtToken.sol",
+        "../../../interfaces/IVariableDebtToken.sol",
+        "../../../interfaces/IAToken.sol",
+        "../configuration/UserConfiguration.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../helpers/Helpers.sol",
+        "../types/DataTypes.sol",
+        "./ValidationLogic.sol",
+        "./ReserveLogic.sol",
+        "./IsolationModeLogic.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "BorrowLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/FlashLoanLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "962464f6de29e65af8b5fd3340f09242",
+      "sourceName": "contracts/protocol/libraries/logic/FlashLoanLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../interfaces/IAToken.sol",
+        "../../../flashloan/interfaces/IFlashLoanReceiver.sol",
+        "../../../flashloan/interfaces/IFlashLoanSimpleReceiver.sol",
+        "../../../interfaces/IPoolAddressesProvider.sol",
+        "../configuration/UserConfiguration.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../helpers/Errors.sol",
+        "../math/WadRayMath.sol",
+        "../math/PercentageMath.sol",
+        "../types/DataTypes.sol",
+        "./ValidationLogic.sol",
+        "./BorrowLogic.sol",
+        "./ReserveLogic.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "FlashLoanLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/flashloan/interfaces/IFlashLoanReceiver.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "e4b241b52e696f9d17e5f48dde4a6abb",
+      "sourceName": "contracts/flashloan/interfaces/IFlashLoanReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IFlashLoanReceiver"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/SupplyLogic.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "7a79eb2a5315fdfefd033a36b3ecb24f",
+      "sourceName": "contracts/protocol/libraries/logic/SupplyLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../interfaces/IAToken.sol",
+        "../helpers/Errors.sol",
+        "../configuration/UserConfiguration.sol",
+        "../types/DataTypes.sol",
+        "../math/WadRayMath.sol",
+        "../math/PercentageMath.sol",
+        "./ValidationLogic.sol",
+        "./ReserveLogic.sol",
+        "../configuration/ReserveConfiguration.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "SupplyLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/PoolLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "11cf40dc874a069f50374e56d016c910",
+      "sourceName": "contracts/protocol/libraries/logic/PoolLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../../dependencies/openzeppelin/contracts/Address.sol",
+        "../../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../../interfaces/IAToken.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../helpers/Errors.sol",
+        "../math/WadRayMath.sol",
+        "../types/DataTypes.sol",
+        "./ReserveLogic.sol",
+        "./ValidationLogic.sol",
+        "./GenericLogic.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PoolLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/misc/FintochProtocolDataProvider.sol": {
+      "lastModificationDate": 1653467166695,
+      "contentHash": "6b27a50936e327c35aaf58c88fc76244",
+      "sourceName": "contracts/misc/FintochProtocolDataProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../dependencies/openzeppelin/contracts/IERC20Detailed.sol",
+        "../protocol/libraries/configuration/ReserveConfiguration.sol",
+        "../protocol/libraries/configuration/UserConfiguration.sol",
+        "../protocol/libraries/types/DataTypes.sol",
+        "../protocol/libraries/math/WadRayMath.sol",
+        "../interfaces/IPoolAddressesProvider.sol",
+        "../interfaces/IStableDebtToken.sol",
+        "../interfaces/IVariableDebtToken.sol",
+        "../interfaces/IPool.sol",
+        "../interfaces/IPoolDataProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "FintochProtocolDataProvider"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPoolDataProvider.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "6d4eebba06bc8192504f0ffa25206e34",
+      "sourceName": "contracts/interfaces/IPoolDataProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPoolDataProvider"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/pool/PoolConfigurator.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "d73ad6d7b7b763394c9291a8298be71b",
+      "sourceName": "contracts/protocol/pool/PoolConfigurator.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/fintoch-upgradeability/VersionedInitializable.sol",
+        "../libraries/configuration/ReserveConfiguration.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../libraries/helpers/Errors.sol",
+        "../libraries/math/PercentageMath.sol",
+        "../libraries/types/DataTypes.sol",
+        "../libraries/logic/ConfiguratorLogic.sol",
+        "../libraries/types/ConfiguratorInputTypes.sol",
+        "../../interfaces/IPoolConfigurator.sol",
+        "../../interfaces/IPool.sol",
+        "../../interfaces/IACLManager.sol",
+        "../../interfaces/IPoolDataProvider.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PoolConfigurator"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/ConfiguratorLogic.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "6897c0fc3a3fbb56de9879093a90734a",
+      "sourceName": "contracts/protocol/libraries/logic/ConfiguratorLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../interfaces/IPool.sol",
+        "../../../interfaces/IInitializableAToken.sol",
+        "../../../interfaces/IInitializableDebtToken.sol",
+        "../../../interfaces/IFintochIncentivesController.sol",
+        "../fintoch-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol",
+        "../configuration/ReserveConfiguration.sol",
+        "../types/DataTypes.sol",
+        "../types/ConfiguratorInputTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ConfiguratorLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/types/ConfiguratorInputTypes.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "f50077142eca2f7aaf4a4d068d045944",
+      "sourceName": "contracts/protocol/libraries/types/ConfiguratorInputTypes.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ConfiguratorInputTypes"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPoolConfigurator.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "187a8e1a3146aa7ffcd5e85cb6f8c87a",
+      "sourceName": "contracts/interfaces/IPoolConfigurator.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../protocol/libraries/types/ConfiguratorInputTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPoolConfigurator"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/fintoch-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "5c59fe6c0a612f24c31e21ac439d12d3",
+      "sourceName": "contracts/protocol/libraries/fintoch-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/upgradeability/InitializableUpgradeabilityProxy.sol",
+        "../../../dependencies/openzeppelin/upgradeability/Proxy.sol",
+        "./BaseImmutableAdminUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "InitializableImmutableAdminUpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/InitializableUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "6dd5e5a7929fed68b5c8dce5f06d8a6f",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/InitializableUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BaseUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "InitializableUpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/Proxy.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "5d11e1cbbf38df5661c16863fa1f5a5f",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/fintoch-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "9bcf97226ea89446335ee3592061f8f1",
+      "sourceName": "contracts/protocol/libraries/fintoch-upgradeability/BaseImmutableAdminUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../../dependencies/openzeppelin/upgradeability/BaseUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "BaseImmutableAdminUpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/BaseUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "3273cd4e46e41ea9c79703a5e7f84042",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/BaseUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Proxy.sol",
+        "../contracts/Address.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "BaseUpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/upgradeability/MockVariableDebtToken.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "8a864ba955570f9ce17057a0e3b8b0ba",
+      "sourceName": "contracts/mocks/upgradeability/MockVariableDebtToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../protocol/tokenization/VariableDebtToken.sol",
+        "../../interfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockVariableDebtToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/upgradeability/MockStableDebtToken.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "e63d1fef509f981d73e1cebbf16c0127",
+      "sourceName": "contracts/mocks/upgradeability/MockStableDebtToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../protocol/tokenization/StableDebtToken.sol",
+        "../../interfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockStableDebtToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/upgradeability/MockAToken.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "850150bc872ee801fe5a43d47650ca19",
+      "sourceName": "contracts/mocks/upgradeability/MockAToken.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../protocol/tokenization/AToken.sol",
+        "../../interfaces/IPool.sol",
+        "../../interfaces/IFintochIncentivesController.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockAToken"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/helpers/MockIncentivesController.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "7712530c3c897d779189a6e2e8fd8b4b",
+      "sourceName": "contracts/mocks/helpers/MockIncentivesController.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IFintochIncentivesController.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockIncentivesController"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/configuration/PoolAddressesProvider.sol": {
+      "lastModificationDate": 1653467012489,
+      "contentHash": "31a6752e8bb1f45753da4c9d1abbbc69",
+      "sourceName": "contracts/protocol/configuration/PoolAddressesProvider.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/Ownable.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../libraries/fintoch-upgradeability/InitializableImmutableAdminUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PoolAddressesProvider"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/contracts/Ownable.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "69ee8777ad9f1f65000e1779650d3ac3",
+      "sourceName": "contracts/dependencies/openzeppelin/contracts/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Context.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/configuration/PoolAddressesProviderRegistry.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "c836ba989b618ab09dd242463e78132c",
+      "sourceName": "contracts/protocol/configuration/PoolAddressesProviderRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/Ownable.sol",
+        "../libraries/helpers/Errors.sol",
+        "../../interfaces/IPoolAddressesProviderRegistry.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PoolAddressesProviderRegistry"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPoolAddressesProviderRegistry.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "98e000dea2da807273be173e5bda25fd",
+      "sourceName": "contracts/interfaces/IPoolAddressesProviderRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPoolAddressesProviderRegistry"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/oracle/SequencerOracle.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "1e526103bb84f9ce3f1f178a14f21162",
+      "sourceName": "contracts/mocks/oracle/SequencerOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/Ownable.sol",
+        "../../interfaces/ISequencerOracle.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "SequencerOracle"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/deployments/ReservesSetupHelper.sol": {
+      "lastModificationDate": 1653462127529,
+      "contentHash": "c8599a08c57b3540cb1f5b80a770c87e",
+      "sourceName": "contracts/deployments/ReservesSetupHelper.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../protocol/pool/PoolConfigurator.sol",
+        "../dependencies/openzeppelin/contracts/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "ReservesSetupHelper"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/InitializableAdminUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "c7e9226ee0ebb6bf5b614c8adb1fe3e2",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/InitializableAdminUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BaseAdminUpgradeabilityProxy.sol",
+        "./InitializableUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "InitializableAdminUpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/BaseAdminUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "4ae248a7d3468c8d03ef1d1a83630b94",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/BaseAdminUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./UpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "BaseAdminUpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/UpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "1328badf403d4424d7af0579af6108fc",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/UpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BaseUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "UpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/AdminUpgradeabilityProxy.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "aed4a805e976e2573ca420603284aad2",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/AdminUpgradeabilityProxy.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./BaseAdminUpgradeabilityProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "AdminUpgradeabilityProxy"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/pool/Pool.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "ef7da37069376ec5ae5826e1465795f0",
+      "sourceName": "contracts/protocol/pool/Pool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../libraries/fintoch-upgradeability/VersionedInitializable.sol",
+        "../libraries/helpers/Errors.sol",
+        "../libraries/configuration/ReserveConfiguration.sol",
+        "../libraries/logic/PoolLogic.sol",
+        "../libraries/logic/ReserveLogic.sol",
+        "../libraries/logic/EModeLogic.sol",
+        "../libraries/logic/SupplyLogic.sol",
+        "../libraries/logic/FlashLoanLogic.sol",
+        "../libraries/logic/BorrowLogic.sol",
+        "../libraries/logic/LiquidationLogic.sol",
+        "../libraries/types/DataTypes.sol",
+        "../libraries/logic/BridgeLogic.sol",
+        "../../interfaces/IERC20WithPermit.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IPool.sol",
+        "../../interfaces/IACLManager.sol",
+        "./PoolStorage.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Pool"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/helpers/MockPool.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "bd0c131afbb5ac78422b13076186ef0e",
+      "sourceName": "contracts/mocks/helpers/MockPool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../protocol/pool/Pool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockPool",
+        "MockPoolInherited"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/flashloan/MockSimpleFlashLoanReceiver.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "305ea2c3864ce622b366d8da7b906977",
+      "sourceName": "contracts/mocks/flashloan/MockSimpleFlashLoanReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/SafeMath.sol",
+        "../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../dependencies/openzeppelin/contracts/SafeMath.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../flashloan/base/FlashLoanSimpleReceiverBase.sol",
+        "../tokens/MintableERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockFlashLoanSimpleReceiver"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/flashloan/MockFlashLoanReceiver.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "2ea453369699bb56e79e8a701fcf8352",
+      "sourceName": "contracts/mocks/flashloan/MockFlashLoanReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/openzeppelin/contracts/IERC20.sol",
+        "../../dependencies/gnosis/contracts/GPv2SafeERC20.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../flashloan/base/FlashLoanReceiverBase.sol",
+        "../tokens/MintableERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockFlashLoanReceiver"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/flashloan/base/FlashLoanReceiverBase.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "94a39ee73cf23ed47e9ea3316467b69b",
+      "sourceName": "contracts/flashloan/base/FlashLoanReceiverBase.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFlashLoanReceiver.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IPool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "FlashLoanReceiverBase"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/upgradeability/MockInitializableImplementation.sol": {
+      "lastModificationDate": 1653462792679,
+      "contentHash": "48dc1a417bbe6614aa41d9dbb3c01074",
+      "sourceName": "contracts/mocks/upgradeability/MockInitializableImplementation.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../protocol/libraries/fintoch-upgradeability/VersionedInitializable.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockInitializableFromConstructorImple",
+        "MockInitializableImple",
+        "MockInitializableImpleV2",
+        "MockReentrantInitializableImple"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/pool/L2Pool.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "0fd08a1feac23ef3e0dda64c2f19d0d9",
+      "sourceName": "contracts/protocol/pool/L2Pool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./Pool.sol",
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../interfaces/IL2Pool.sol",
+        "../libraries/logic/CalldataLogic.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.10"
+      ],
+      "artifacts": [
+        "L2Pool"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IL2Pool.sol": {
+      "lastModificationDate": 1653467012485,
+      "contentHash": "4d1d9deba867cc4d905e9ff99b952f83",
+      "sourceName": "contracts/interfaces/IL2Pool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IL2Pool"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/protocol/libraries/logic/CalldataLogic.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "340e22944fb5e4d6da12355d1de4b0dd",
+      "sourceName": "contracts/protocol/libraries/logic/CalldataLogic.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "CalldataLogic"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/helpers/MockL2Pool.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "d1ebedf4e87b1592686b755f8d552a44",
+      "sourceName": "contracts/mocks/helpers/MockL2Pool.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IPoolAddressesProvider.sol",
+        "../../protocol/pool/L2Pool.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockL2Pool"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/misc/L2Encoder.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "6a6bb74d9440e5e43355caedde248776",
+      "sourceName": "contracts/misc/L2Encoder.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../dependencies/openzeppelin/contracts/SafeCast.sol",
+        "../interfaces/IPool.sol",
+        "../protocol/libraries/types/DataTypes.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "L2Encoder"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/openzeppelin/upgradeability/Initializable.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "f056d3e8f9b171bfc7fc5c20879d1ef1",
+      "sourceName": "contracts/dependencies/openzeppelin/upgradeability/Initializable.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/dependencies/weth/WETH9.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "477dfdcf7f1c0c7e71fb9f6aee9fe180",
+      "sourceName": "contracts/dependencies/weth/WETH9.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "WETH9"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/tokens/WETH9Mocked.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "1573f8ae4144fcdfa67b98a1e50a7b6a",
+      "sourceName": "contracts/mocks/tokens/WETH9Mocked.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../dependencies/weth/WETH9.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "WETH9Mocked"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/interfaces/IPriceOracle.sol": {
+      "lastModificationDate": 1653462121869,
+      "contentHash": "db5e348efece76be4609604b2fd29643",
+      "sourceName": "contracts/interfaces/IPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IPriceOracle"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/oracle/PriceOracle.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "3bb6383c646a1ecadff84353aa704fe7",
+      "sourceName": "contracts/mocks/oracle/PriceOracle.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IPriceOracle.sol"
+      ],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "PriceOracle"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/misc/interfaces/IWETH.sol": {
+      "lastModificationDate": 1653461854669,
+      "contentHash": "60852a2f6b4cf6eb4e5a3c8d8f0f6ee5",
+      "sourceName": "contracts/misc/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/helpers/MockPeripheryContract.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "3cd64415604d87f1926938a933fd7ec2",
+      "sourceName": "contracts/mocks/helpers/MockPeripheryContract.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockPeripheryContractV1",
+        "MockPeripheryContractV2"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/helpers/SelfDestructTransfer.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "d8605220859123a63d3cbb65f4216ab6",
+      "sourceName": "contracts/mocks/helpers/SelfDestructTransfer.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "SelfdestructTransfer"
+      ]
+    },
+    "/share/project/aave-v3-core/contracts/mocks/oracle/CLAggregators/MockAggregator.sol": {
+      "lastModificationDate": 1653461854673,
+      "contentHash": "4b5414ce993048e80a4c92170c04fb04",
+      "sourceName": "contracts/mocks/oracle/CLAggregators/MockAggregator.sol",
+      "solcConfig": {
+        "version": "0.8.10",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 100000
+          },
+          "evmVersion": "london",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.10"
+      ],
+      "artifacts": [
+        "MockAggregator"
+      ]
+    }
+  }
+}
