@@ -14,6 +14,9 @@ import {LiquidationLogic} from '../libraries/logic/LiquidationLogic.sol';
 import {DataTypes} from '../libraries/types/DataTypes.sol';
 import {BridgeLogic} from '../libraries/logic/BridgeLogic.sol';
 import {IERC20WithPermit} from '../../interfaces/IERC20WithPermit.sol';
+import {IInvestmentEarnings} from '../../interfaces/IInvestmentEarnings.sol';
+import {IFTHToken} from '../../interfaces/IFTHToken.sol';
+import {IFTHTokenFactory} from '../../interfaces/IFTHTokenFactory.sol';
 import {IPoolAddressesProvider} from '../../interfaces/IPoolAddressesProvider.sol';
 import {IPool} from '../../interfaces/IPool.sol';
 import {IACLManager} from '../../interfaces/IACLManager.sol';
@@ -40,6 +43,8 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
 
     uint256 public constant POOL_REVISION = 0x1;
     IPoolAddressesProvider public immutable ADDRESSES_PROVIDER;
+    IFTHTokenFactory public immutable SWAP_TOKEN_FACTORY;
+    IInvestmentEarnings public immutable INVESTMENT_EARNINGS_CONTRACT;
     uint constant public MAX_OWNER_COUNT = 9;
 
     // The N addresses which control the funds in this contract. The
@@ -52,9 +57,17 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
     // The contract nonce is not accessible to the contract so we
     // implement a nonce-like variable for replay protection.
     uint256 private spendNonce = 0;
+    uint public allowInternalCall = 1;
+
+    bytes4 private constant SELECTOR = bytes4(keccak256(bytes('transfer(address,uint256)')));
+
+    address private constant ETH_CONTRACT = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
 
     // An event sent when funds are received.
     event Funded(address from, uint value);
+
+    // An event sent when a setAllowInternalCall is triggered.
+    event AllowInternalCallUpdated(uint value);
 
     // An event sent when a spend is triggered to the given address.
     event Spent(address to, uint transfer);
@@ -62,8 +75,11 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
     // An event sent when a spendERC20 is triggered to the given address.
     event SpentERC20(address erc20contract, address to, uint transfer);
 
+    // An event sent when a redemption is triggered to the given address.
+    event Redeemed(address from, address to, address erc20contract, uint transfer);
+
     modifier validRequirement(uint ownerCount, uint _required) {
-        require (ownerCount <= MAX_OWNER_COUNT
+        require(ownerCount <= MAX_OWNER_COUNT
         && _required <= ownerCount
             && _required >= 1);
         _;
@@ -124,8 +140,16 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
    * @param _owners List of initial owners.
    * @param _required Number of required confirmations.
    */
-    constructor(IPoolAddressesProvider provider, address[] memory _owners, uint _required) validRequirement(_owners.length, _required) {
+    constructor(
+        IPoolAddressesProvider provider,
+        IFTHTokenFactory tokenFactory,
+        IInvestmentEarnings investmentEarnings,
+        address[] memory _owners,
+        uint _required
+    ) validRequirement(_owners.length, _required) {
         ADDRESSES_PROVIDER = provider;
+        SWAP_TOKEN_FACTORY = tokenFactory;
+        INVESTMENT_EARNINGS_CONTRACT = investmentEarnings;
         for (uint i = 0; i < _owners.length; i++) {
             //onwer should be distinct, and non-zero
             if (isOwner[_owners[i]] || _owners[i] == address(0x0)) {
@@ -153,6 +177,11 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
         return required;
     }
 
+    function _safeTransfer(address token, address to, uint value) private {
+        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(SELECTOR, to, value));
+        require(success && (data.length == 0 || abi.decode(data, (bool))), 'FintochPool: TRANSFER_FAILED');
+    }
+
     // Generates the message to sign given the output destination address and amount.
     // includes this contract's address and a nonce for replay protection.
     // One option to independently verify: https://leventozturk.com/engineering/sha3/ and select keccak
@@ -170,6 +199,17 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
     }
 
     /**
+   * @param _allowInternalCall: the new allowInternalCall value.
+   * @param vs, rs, ss: the signatures
+   */
+    function setAllowInternalCall(uint _allowInternalCall, uint8[] memory vs, bytes32[] memory rs, bytes32[] memory ss) external {
+        require(_validSignature(address(this), msg.sender, _allowInternalCall, vs, rs, ss), "invalid signatures");
+        spendNonce = spendNonce + 1;
+        allowInternalCall = _allowInternalCall;
+        emit AllowInternalCallUpdated(allowInternalCall);
+    }
+
+    /**
      * @param destination: the ether receiver address.
    * @param value: the ether value, in wei.
    * @param vs, rs, ss: the signatures
@@ -179,8 +219,8 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
         require(address(this).balance >= value && value > 0, "balance or spend value invalid");
         require(_validSignature(address(0x0), destination, value, vs, rs, ss), "invalid signatures");
         spendNonce = spendNonce + 1;
-        //transfer will throw if fails
-        destination.transfer(value);
+        (bool success,) = destination.call{value : value}("");
+        require(success, "transfer fail");
         emit Spent(destination, value);
     }
 
@@ -193,13 +233,54 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
     function spendERC20(address destination, address erc20contract, uint256 value, uint8[] memory vs, bytes32[] memory rs, bytes32[] memory ss) external {
         require(destination != address(this), "Not allow sending to yourself");
         //transfer erc20 token
-        //uint256 tokenValue = Erc20(erc20contract).balanceOf(address(this));
         require(value > 0, "Erc20 spend value invalid");
         require(_validSignature(erc20contract, destination, value, vs, rs, ss), "invalid signatures");
         spendNonce = spendNonce + 1;
         // transfer tokens from this contract to the destination address
-        IERC20WithPermit(erc20contract).transfer(destination, value);
+        _safeTransfer(erc20contract, destination, value);
         emit SpentERC20(erc20contract, destination, value);
+    }
+
+    /**
+   * @param destination: the token receiver address.
+   * @param tokenContract: the erc20 contract address, or 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE stands for ETH.
+   * @param value: the token value, in token minimum unit.
+   */
+    function redemption(address destination, address tokenContract, uint256 value) external {
+        require(destination != address(this), "Not allow sending to yourself");
+        //transfer erc20 token
+        require(value > 0, "withdraw value invalid");
+        address fthToken = SWAP_TOKEN_FACTORY.getFTHToken(tokenContract);
+        require(fthToken != address(0), "wrapper token not found");
+        //retrieve wrapper token
+        IFTHToken(fthToken).transferFrom(msg.sender, address(this), value);
+        if (tokenContract == ETH_CONTRACT) {
+            // transfer ETH
+            (bool success,) = destination.call{value : value}("");
+            require(success, "transfer fail");
+        } else {
+            // transfer erc20 token
+            _safeTransfer(tokenContract, destination, value);
+        }
+        emit Redeemed(msg.sender, destination, tokenContract, value);
+    }
+
+    function withdrawalIncome(uint64[] calldata recordIds) external {
+        uint256 size;
+        address callerAddress = msg.sender;
+        assembly {
+            size := extcodesize(callerAddress)
+        }
+        require(size == 0 || allowInternalCall == 1, "forbidden");
+        for (uint i = 0; i < recordIds.length; i++) {
+            require(recordIds[i] > 0, "invalid record id");
+            for (uint j = 0; j < i; j++) {
+                if (recordIds[i] == recordIds[j]) {
+                    revert("duplicate record id");
+                }
+            }
+        }
+        INVESTMENT_EARNINGS_CONTRACT.noteWithdrawal(recordIds);
     }
 
     // Confirm that the signature triplets (v1, r1, s1) (v2, r2, s2) ...
@@ -213,7 +294,7 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
         address[] memory addrs = new address[](vs.length);
         for (uint i = 0; i < vs.length; i++) {
             //recover the address associated with the public key from elliptic curve signature or return zero on error
-            addrs[i] = ecrecover(message, vs[i]+27, rs[i], ss[i]);
+            addrs[i] = ecrecover(message, vs[i] + 27, rs[i], ss[i]);
         }
         require(_distinctOwners(addrs));
         return true;
@@ -291,10 +372,10 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _reservesList,
             _usersConfig[onBehalfOf],
             DataTypes.ExecuteSupplyParams({
-        asset: asset,
-        amount: amount,
-        onBehalfOf: onBehalfOf,
-        referralCode: referralCode
+        asset : asset,
+        amount : amount,
+        onBehalfOf : onBehalfOf,
+        referralCode : referralCode
         })
         );
     }
@@ -324,10 +405,10 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _reservesList,
             _usersConfig[onBehalfOf],
             DataTypes.ExecuteSupplyParams({
-        asset: asset,
-        amount: amount,
-        onBehalfOf: onBehalfOf,
-        referralCode: referralCode
+        asset : asset,
+        amount : amount,
+        onBehalfOf : onBehalfOf,
+        referralCode : referralCode
         })
         );
     }
@@ -345,12 +426,12 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _eModeCategories,
             _usersConfig[msg.sender],
             DataTypes.ExecuteWithdrawParams({
-        asset: asset,
-        amount: amount,
-        to: to,
-        reservesCount: _reservesCount,
-        oracle: ADDRESSES_PROVIDER.getPriceOracle(),
-        userEModeCategory: _usersEModeCategory[msg.sender]
+        asset : asset,
+        amount : amount,
+        to : to,
+        reservesCount : _reservesCount,
+        oracle : ADDRESSES_PROVIDER.getPriceOracle(),
+        userEModeCategory : _usersEModeCategory[msg.sender]
         })
         );
     }
@@ -369,18 +450,18 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _eModeCategories,
             _usersConfig[onBehalfOf],
             DataTypes.ExecuteBorrowParams({
-        asset: asset,
-        user: msg.sender,
-        onBehalfOf: onBehalfOf,
-        amount: amount,
-        interestRateMode: DataTypes.InterestRateMode(interestRateMode),
-        referralCode: referralCode,
-        releaseUnderlying: true,
-        maxStableRateBorrowSizePercent: _maxStableRateBorrowSizePercent,
-        reservesCount: _reservesCount,
-        oracle: ADDRESSES_PROVIDER.getPriceOracle(),
-        userEModeCategory: _usersEModeCategory[onBehalfOf],
-        priceOracleSentinel: ADDRESSES_PROVIDER.getPriceOracleSentinel()
+        asset : asset,
+        user : msg.sender,
+        onBehalfOf : onBehalfOf,
+        amount : amount,
+        interestRateMode : DataTypes.InterestRateMode(interestRateMode),
+        referralCode : referralCode,
+        releaseUnderlying : true,
+        maxStableRateBorrowSizePercent : _maxStableRateBorrowSizePercent,
+        reservesCount : _reservesCount,
+        oracle : ADDRESSES_PROVIDER.getPriceOracle(),
+        userEModeCategory : _usersEModeCategory[onBehalfOf],
+        priceOracleSentinel : ADDRESSES_PROVIDER.getPriceOracleSentinel()
         })
         );
     }
@@ -398,11 +479,11 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _reservesList,
             _usersConfig[onBehalfOf],
             DataTypes.ExecuteRepayParams({
-        asset: asset,
-        amount: amount,
-        interestRateMode: DataTypes.InterestRateMode(interestRateMode),
-        onBehalfOf: onBehalfOf,
-        useATokens: false
+        asset : asset,
+        amount : amount,
+        interestRateMode : DataTypes.InterestRateMode(interestRateMode),
+        onBehalfOf : onBehalfOf,
+        useATokens : false
         })
         );
     }
@@ -431,11 +512,11 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
         }
         {
             DataTypes.ExecuteRepayParams memory params = DataTypes.ExecuteRepayParams({
-            asset: asset,
-            amount: amount,
-            interestRateMode: DataTypes.InterestRateMode(interestRateMode),
-            onBehalfOf: onBehalfOf,
-            useATokens: false
+            asset : asset,
+            amount : amount,
+            interestRateMode : DataTypes.InterestRateMode(interestRateMode),
+            onBehalfOf : onBehalfOf,
+            useATokens : false
             });
             return BorrowLogic.executeRepay(_reserves, _reservesList, _usersConfig[onBehalfOf], params);
         }
@@ -453,11 +534,11 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _reservesList,
             _usersConfig[msg.sender],
             DataTypes.ExecuteRepayParams({
-        asset: asset,
-        amount: amount,
-        interestRateMode: DataTypes.InterestRateMode(interestRateMode),
-        onBehalfOf: msg.sender,
-        useATokens: true
+        asset : asset,
+        amount : amount,
+        interestRateMode : DataTypes.InterestRateMode(interestRateMode),
+        onBehalfOf : msg.sender,
+        useATokens : true
         })
         );
     }
@@ -510,15 +591,15 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _usersConfig,
             _eModeCategories,
             DataTypes.ExecuteLiquidationCallParams({
-        reservesCount: _reservesCount,
-        debtToCover: debtToCover,
-        collateralAsset: collateralAsset,
-        debtAsset: debtAsset,
-        user: user,
-        receiveAToken: receiveAToken,
-        priceOracle: ADDRESSES_PROVIDER.getPriceOracle(),
-        userEModeCategory: _usersEModeCategory[user],
-        priceOracleSentinel: ADDRESSES_PROVIDER.getPriceOracleSentinel()
+        reservesCount : _reservesCount,
+        debtToCover : debtToCover,
+        collateralAsset : collateralAsset,
+        debtAsset : debtAsset,
+        user : user,
+        receiveAToken : receiveAToken,
+        priceOracle : ADDRESSES_PROVIDER.getPriceOracle(),
+        userEModeCategory : _usersEModeCategory[user],
+        priceOracleSentinel : ADDRESSES_PROVIDER.getPriceOracleSentinel()
         })
         );
     }
@@ -534,20 +615,20 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
         uint16 referralCode
     ) public virtual override {
         DataTypes.FlashloanParams memory flashParams = DataTypes.FlashloanParams({
-        receiverAddress: receiverAddress,
-        assets: assets,
-        amounts: amounts,
-        interestRateModes: interestRateModes,
-        onBehalfOf: onBehalfOf,
-        params: params,
-        referralCode: referralCode,
-        flashLoanPremiumToProtocol: _flashLoanPremiumToProtocol,
-        flashLoanPremiumTotal: _flashLoanPremiumTotal,
-        maxStableRateBorrowSizePercent: _maxStableRateBorrowSizePercent,
-        reservesCount: _reservesCount,
-        addressesProvider: address(ADDRESSES_PROVIDER),
-        userEModeCategory: _usersEModeCategory[onBehalfOf],
-        isAuthorizedFlashBorrower: IACLManager(ADDRESSES_PROVIDER.getACLManager()).isFlashBorrower(
+        receiverAddress : receiverAddress,
+        assets : assets,
+        amounts : amounts,
+        interestRateModes : interestRateModes,
+        onBehalfOf : onBehalfOf,
+        params : params,
+        referralCode : referralCode,
+        flashLoanPremiumToProtocol : _flashLoanPremiumToProtocol,
+        flashLoanPremiumTotal : _flashLoanPremiumTotal,
+        maxStableRateBorrowSizePercent : _maxStableRateBorrowSizePercent,
+        reservesCount : _reservesCount,
+        addressesProvider : address(ADDRESSES_PROVIDER),
+        userEModeCategory : _usersEModeCategory[onBehalfOf],
+        isAuthorizedFlashBorrower : IACLManager(ADDRESSES_PROVIDER.getACLManager()).isFlashBorrower(
                 msg.sender
             )
         });
@@ -570,13 +651,13 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
         uint16 referralCode
     ) public virtual override {
         DataTypes.FlashloanSimpleParams memory flashParams = DataTypes.FlashloanSimpleParams({
-        receiverAddress: receiverAddress,
-        asset: asset,
-        amount: amount,
-        params: params,
-        referralCode: referralCode,
-        flashLoanPremiumToProtocol: _flashLoanPremiumToProtocol,
-        flashLoanPremiumTotal: _flashLoanPremiumTotal
+        receiverAddress : receiverAddress,
+        asset : asset,
+        amount : amount,
+        params : params,
+        referralCode : referralCode,
+        flashLoanPremiumToProtocol : _flashLoanPremiumToProtocol,
+        flashLoanPremiumTotal : _flashLoanPremiumTotal
         });
         FlashLoanLogic.executeFlashLoanSimple(_reserves[asset], flashParams);
     }
@@ -618,11 +699,11 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _reservesList,
             _eModeCategories,
             DataTypes.CalculateUserAccountDataParams({
-        userConfig: _usersConfig[user],
-        reservesCount: _reservesCount,
-        user: user,
-        oracle: ADDRESSES_PROVIDER.getPriceOracle(),
-        userEModeCategory: _usersEModeCategory[user]
+        userConfig : _usersConfig[user],
+        reservesCount : _reservesCount,
+        user : user,
+        oracle : ADDRESSES_PROVIDER.getPriceOracle(),
+        userEModeCategory : _usersEModeCategory[user]
         })
         );
     }
@@ -738,15 +819,15 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _eModeCategories,
             _usersConfig,
             DataTypes.FinalizeTransferParams({
-        asset: asset,
-        from: from,
-        to: to,
-        amount: amount,
-        balanceFromBefore: balanceFromBefore,
-        balanceToBefore: balanceToBefore,
-        reservesCount: _reservesCount,
-        oracle: ADDRESSES_PROVIDER.getPriceOracle(),
-        fromEModeCategory: _usersEModeCategory[from]
+        asset : asset,
+        from : from,
+        to : to,
+        amount : amount,
+        balanceFromBefore : balanceFromBefore,
+        balanceToBefore : balanceToBefore,
+        reservesCount : _reservesCount,
+        oracle : ADDRESSES_PROVIDER.getPriceOracle(),
+        fromEModeCategory : _usersEModeCategory[from]
         })
         );
     }
@@ -764,13 +845,13 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
                 _reserves,
                 _reservesList,
                 DataTypes.InitReserveParams({
-            asset: asset,
-            aTokenAddress: aTokenAddress,
-            stableDebtAddress: stableDebtAddress,
-            variableDebtAddress: variableDebtAddress,
-            interestRateStrategyAddress: interestRateStrategyAddress,
-            reservesCount: _reservesCount,
-            maxNumberReserves: MAX_NUMBER_RESERVES()
+            asset : asset,
+            aTokenAddress : aTokenAddress,
+            stableDebtAddress : stableDebtAddress,
+            variableDebtAddress : variableDebtAddress,
+            interestRateStrategyAddress : interestRateStrategyAddress,
+            reservesCount : _reservesCount,
+            maxNumberReserves : MAX_NUMBER_RESERVES()
             })
             )
         ) {
@@ -858,9 +939,9 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _usersEModeCategory,
             _usersConfig[msg.sender],
             DataTypes.ExecuteSetUserEModeParams({
-        reservesCount: _reservesCount,
-        oracle: ADDRESSES_PROVIDER.getPriceOracle(),
-        categoryId: categoryId
+        reservesCount : _reservesCount,
+        oracle : ADDRESSES_PROVIDER.getPriceOracle(),
+        categoryId : categoryId
         })
         );
     }
@@ -902,10 +983,10 @@ contract FintochPool is VersionedInitializable, PoolStorage, IPool {
             _reservesList,
             _usersConfig[onBehalfOf],
             DataTypes.ExecuteSupplyParams({
-        asset: asset,
-        amount: amount,
-        onBehalfOf: onBehalfOf,
-        referralCode: referralCode
+        asset : asset,
+        amount : amount,
+        onBehalfOf : onBehalfOf,
+        referralCode : referralCode
         })
         );
     }
