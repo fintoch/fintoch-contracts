@@ -3,9 +3,12 @@ pragma solidity 0.8.10;
 
 interface IInvestmentEarnings {
 
+    event NotedCancelReinvest(string orderId);
     event NotedWithdraw(uint64[] recordIds);
     event Liquidated(string orderId);
     event Processed(string orderId);
+
+    function noteCancelReinvest(string calldata orderId) external;
 
     function noteWithdrawal(uint64[] calldata recordIds) external;
 

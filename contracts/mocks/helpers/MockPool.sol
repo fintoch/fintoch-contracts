@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.10;
 
-import {IPoolAddressesProvider} from '../../interfaces/IPoolAddressesProvider.sol';
+import {IInvestmentEarnings} from '../../interfaces/IInvestmentEarnings.sol';
 
 contract MockPool {
   // Reserved storage space to avoid layout collisions.
@@ -32,22 +32,15 @@ import {FintochPool} from '../../protocol/pool/FintochPool.sol';
 contract MockPoolInherited is FintochPool {
   uint16 internal _maxNumberOfReserves = 128;
 
-  function getRevision() internal pure override returns (uint256) {
-    return 0x3;
-  }
-
-  constructor(IPoolAddressesProvider provider, address[] memory _owners, uint _required) FintochPool(provider, _owners, _required) {}
+  constructor(
+    IInvestmentEarnings investmentEarnings,
+    address srcToken,
+    address[] memory _owners,
+    uint _required
+  ) FintochPool(investmentEarnings, srcToken, _owners, _required) {}
 
   function setMaxNumberOfReserves(uint16 newMaxNumberOfReserves) public {
     _maxNumberOfReserves = newMaxNumberOfReserves;
   }
 
-  function MAX_NUMBER_RESERVES() public view override returns (uint16) {
-    return _maxNumberOfReserves;
-  }
-
-  function dropReserve(address asset) external override {
-    _reservesList[_reserves[asset].id] = address(0);
-    delete _reserves[asset];
-  }
 }

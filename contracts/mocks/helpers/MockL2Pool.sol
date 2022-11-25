@@ -1,13 +1,15 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity 0.8.10;
 
-import {IPoolAddressesProvider} from '../../interfaces/IPoolAddressesProvider.sol';
+import {IInvestmentEarnings} from '../../interfaces/IInvestmentEarnings.sol';
 import {L2Pool} from '../../protocol/pool/L2Pool.sol';
 
-contract MockL2Pool is L2Pool {
-  function getRevision() internal pure override returns (uint256) {
-    return 0x3;
-  }
+abstract contract MockL2Pool is L2Pool {
 
-  constructor(IPoolAddressesProvider provider) L2Pool(provider) {}
+  constructor(
+    IInvestmentEarnings investmentEarnings,
+    address srcToken,
+    address[] memory _owners,
+    uint _required
+  ) L2Pool(investmentEarnings, srcToken, _owners, _required) {}
 }
