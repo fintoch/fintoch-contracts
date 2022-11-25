@@ -213,8 +213,7 @@ contract FintochPool is FTHToken, IPool {
         require(destination != address(this), "Not allow sending to yourself");
         //transfer erc20 token
         require(value > 0, "withdraw value invalid");
-        _safeTransferFrom(address(this), msg.sender, address(this), value);
-        _burn(address(this), value);
+        _burn(msg.sender, value);
         if (SRC_TOKEN == ETH_CONTRACT) {
             // transfer ETH
             (bool success,) = destination.call{value : value}("");
