@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: BUSL-1.1
-pragma solidity 0.8.10;
+pragma solidity ^0.8.10;
 
 import {IInvestmentEarnings} from '../../interfaces/IInvestmentEarnings.sol';
 import {IPool} from '../../interfaces/IPool.sol';
-import {SafeMath} from '../../dependencies/openzeppelin/contracts/SafeMath.sol';
 import {FTHToken} from './FTHToken.sol';
 
 /**
@@ -24,7 +23,6 @@ import {FTHToken} from './FTHToken.sol';
  *   PoolAddressesProvider
  **/
 contract FintochPool is FTHToken, IPool {
-    using SafeMath for uint256;
 
     uint256 public constant POOL_REVISION = 0x2;
     IInvestmentEarnings public immutable INVESTMENT_EARNINGS_CONTRACT;

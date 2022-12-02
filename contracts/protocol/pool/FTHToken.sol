@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: BUSL-1.1
-pragma solidity 0.8.10;
+pragma solidity ^0.8.10;
 
 import {SafeMath} from '../../dependencies/openzeppelin/contracts/SafeMath.sol';
 import {IERC20} from '../../dependencies/openzeppelin/contracts/IERC20.sol';
@@ -7,8 +7,8 @@ import {IERC20} from '../../dependencies/openzeppelin/contracts/IERC20.sol';
 contract FTHToken is IERC20 {
     using SafeMath for uint256;
 
-    string public constant name = 'Fintoch Token';
-    string public constant symbol = 'FTH-Token';
+    string public constant name = 'Fintoch DC';
+    string public constant symbol = 'FTH-DC';
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
     mapping(address => uint256) public balanceOf;

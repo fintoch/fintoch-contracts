@@ -57,7 +57,7 @@ contract Fintoch {
     event SpentERC20(address erc20contract, address to, uint transfer);
 
     // An event sent when a liquidatedAssets is triggered to the given address.
-    event Liquidated(string orderId, address erc20contract, address fintochPool, uint recoveryAmount);
+    event Liquidated(string orderId, address erc20contract, address fintochPool, uint recoveryAmount, uint reserveAmount);
 
     // An event sent when an toSwap is executed.
     event Swapped(address routerAddress, uint transfer);
@@ -153,11 +153,16 @@ contract Fintoch {
     }
 
     //0x20 is used for setBorrowInfo
-    function setBorrowInfo(BorrowInfo calldata _borrowInfo, uint8[] calldata vs, bytes32[] calldata rs, bytes32[] calldata ss) external {
-        require(_validSignature(this.setBorrowInfo.selector, address(0x20), _borrowInfo.tokenAddress, _borrowInfo.borrowAmount, vs, rs, ss), "invalid signatures");
+    function setBorrowInfo(bytes calldata borrowInfoBytes, uint8[] calldata vs, bytes32[] calldata rs, bytes32[] calldata ss) external {
+        (string memory orderId, uint256 borrowAmount, address tokenAddress) = abi.decode(borrowInfoBytes, (string, uint256, address));
+        require(_validSignature(this.setBorrowInfo.selector, address(0x20), tokenAddress, borrowAmount, vs, rs, ss), "invalid signatures");
         spendNonce = spendNonce + 1;
-        borrowInfo = _borrowInfo;
-        emit BorrowInfoUpdated(_borrowInfo);
+        borrowInfo = BorrowInfo({
+            orderId: orderId,
+            borrowAmount: borrowAmount,
+            tokenAddress: tokenAddress
+        });
+        emit BorrowInfoUpdated(borrowInfo);
     }
 
     /**
@@ -194,29 +199,34 @@ contract Fintoch {
     }
 
     // @fintochPool: the fintoch pool address.
-    // @value: the token value, in token minimum unit.
+    // @assetAmount: the number of tokens that need to be converted into lp, remaining tokens will be sent directly to the fintoch pool
     // @vs, rs, ss: the signatures
-    function liquidatedAssets(address fintochPool, uint8[] calldata vs, bytes32[] calldata rs, bytes32[] calldata ss) external {
+    function liquidatedAssets(address fintochPool, uint256 assetAmount, uint8[] calldata vs, bytes32[] calldata rs, bytes32[] calldata ss) external {
         require(fintochPool != address(0), "Cannot be zero address");
-        require(_validSignature(this.liquidatedAssets.selector, borrowInfo.tokenAddress, fintochPool, spendNonce, vs, rs, ss), "invalid signatures");
+        require(_validSignature(this.liquidatedAssets.selector, borrowInfo.tokenAddress, fintochPool, assetAmount, vs, rs, ss), "invalid signatures");
         spendNonce = spendNonce + 1;
         // transfer tokens from this contract to the fintochPool address
-        uint256 recoveryAmount;
-        uint256 value;
+        uint256 actualBalance;
+        uint256 mintValue;
         if (borrowInfo.tokenAddress == ETH_CONTRACT) {
-            recoveryAmount = address(this).balance;
-            value = recoveryAmount;
+            actualBalance = address(this).balance;
+            mintValue = assetAmount;
         } else {
-            recoveryAmount = IERC20(borrowInfo.tokenAddress).balanceOf(address(this));
+            actualBalance = IERC20(borrowInfo.tokenAddress).balanceOf(address(this));
         }
-        (bool success,) = fintochPool.call{value: value}(abi.encodeWithSelector(
-                bytes4(keccak256(bytes('mint(address,uint256)'))),
-                address(this),
-                recoveryAmount
-            )
-        );
-        require(success, "mint fail");
-        emit Liquidated(borrowInfo.orderId, borrowInfo.tokenAddress, fintochPool, recoveryAmount);
+        require(actualBalance >= assetAmount, "actualBalance < assetAmount");
+        uint256 reserveAmount = actualBalance - assetAmount;
+        IPool(fintochPool).mint{value: mintValue}(address(this), assetAmount);
+        if (reserveAmount > 0) {
+            // If there are remaining tokens after switching to lp, transfer directly
+            if (borrowInfo.tokenAddress == ETH_CONTRACT) {
+                (bool success,) = fintochPool.call{value : reserveAmount}("");
+                require(success, "transfer reserve ETH fail");
+            } else {
+                _safeTransfer(borrowInfo.tokenAddress, fintochPool, reserveAmount);
+            }
+        }
+        emit Liquidated(borrowInfo.orderId, borrowInfo.tokenAddress, fintochPool, assetAmount, reserveAmount);
     }
 
     // @routerAddress: the routing contract address of the decentralized exchange.
